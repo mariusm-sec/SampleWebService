@@ -7,7 +7,7 @@ services:
     ports:
      - 5000:5000
     volumes:
-     - .:/code
+     - .:/app
      - ./logs:/logs
   prometheus:
     image: prom/prometheus:latest
