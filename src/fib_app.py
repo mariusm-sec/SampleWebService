@@ -25,7 +25,7 @@ setup_metrics(app)
 
 @app.route('/')
 def hello():
-    return "Please visit /fibseq/NUMBER url to get Fibonacci sequence or /fib/NUMBER to get Fibonacci number.\n"
+    return "Please visit /fibseq/NUMBER url to get Fibonacci sequence.\n"
 
 @app.route('/fibseq/<num>')
 def show_fibonacci_sequence(num):
