@@ -1,5 +1,5 @@
 import logging
-from logging.handlers import RotatingFileHandler
+#from logging.handlers import RotatingFileHandler
 from flask import Flask, request, jsonify
 from flask_prometheus import setup_metrics
 from prometheus_client import generate_latest
@@ -57,7 +57,8 @@ def metrics():
 if __name__ == "__main__":
     # setup logging
     app.logger = logging.getLogger(__name__)
-    handler = RotatingFileHandler('/logs/flask.log', mode='a', maxBytes=1000000, backupCount=5)
+    #handler = RotatingFileHandler('/logs/flask.log', mode='a', maxBytes=1000000, backupCount=5)
+    handler = logging.StreamHandler(sys.stdout)
     formatter = RequestFormatter('%(asctime)s: %(name)s - %(levelname)s - %(remote_addr)s "%(method)s %(path)s" "%(message)s"')
     handler.setFormatter(formatter)
     app.logger.setLevel(logging.INFO)
